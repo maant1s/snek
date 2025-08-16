@@ -1,7 +1,7 @@
 #include "snek.hpp"
 
 void setNonBlockingInput(bool enable) {
-#ifdef _WIN32
+/* #ifdef _WIN32
 	HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
 	DWORD mode;
 
@@ -13,7 +13,7 @@ void setNonBlockingInput(bool enable) {
 		mode |= (ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT);
 	}
 	SetConsoleMode(hStdin, mode);
-#else
+#else */
 	static termios oldt;
 	termios newt;
 
@@ -28,7 +28,7 @@ void setNonBlockingInput(bool enable) {
 		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 		fcntl(STDIN_FILENO, F_SETFL, 0);
 	}
-#endif
+// #endif
 }
 
 char readInput(){

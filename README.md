@@ -5,4 +5,4 @@ features work in progress code for windows, unfinished and doesn't work yet, lin
 known bugs:
 - the entire windows version
 - leftover characters in input buffer resulting in wrong options being selected, sometimes
-- boundary checking
+- boundary checking might be too unforgiving timing-wise

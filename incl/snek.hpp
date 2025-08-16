@@ -13,10 +13,10 @@
 #include <random>
 #include <limits>
 
-#ifdef _WIN32
+/* #ifdef _WIN32
 	#include <windows.h>
 	#include <conio.h>
-#else
+#else */
 	#include <termios.h>
 	#include <unistd.h>
 	#include <fcntl.h>
@@ -26,7 +26,7 @@
 	constexpr char ANSI_GREEN[] = "\033[32m";
 	constexpr char ANSI_YELLOW[] = "\033[33m";
 	constexpr char ANSI_BLUE[] = "\033[34m";
-#endif
+// #endif
 	
 using Position = std::pair<int, int>;
 

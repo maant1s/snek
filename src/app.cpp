@@ -58,11 +58,11 @@ void App::gameLoop(Level diff){
 }
 
 void App::clearScreen(){
-#ifdef _WIN32
+/* #ifdef _WIN32
 	system("cls");	// TODO change it to something faster
-#else
+#else */
 	std::cout << "\033c";
-#endif
+// #endif
 }
 
 bool App::keepPlaying(Level& d){

@@ -47,7 +47,7 @@ std::deque<Position> Snake::getBody() const{
 bool Snake::checkSelfCollision() const{
 	Position head = getHeadPosition();
 
-	return std::count(body.begin() + 1, body.end(), head) > 0;
+	return std::find(body.begin() + 1, body.end(), head) != body.end();
 }
 
 bool Snake::checkWallCollision() const{
