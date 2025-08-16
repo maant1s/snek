@@ -4,5 +4,6 @@ features work in progress code for windows, unfinished and doesn't work yet, lin
 
 known bugs:
 - the entire windows version
-- leftover characters in input buffer resulting in wrong options being selected, sometimes
+- weird issues with leftover characters in input buffer
 - boundary checking might be too unforgiving timing-wise
+- only works in default sized window, otherwise the terminal cannot keep up with printing

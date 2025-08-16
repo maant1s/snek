@@ -70,9 +70,12 @@ bool App::keepPlaying(Level& d){
 	std::cout.flush();
 	
 	setNonBlockingInput(false);
+	while(read(STDIN_FILENO, nullptr, 0) > 0); // clear the input buffer, still bugged anyway
+
 	char input;
 	std::cin >> input;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	while(read(STDIN_FILENO, nullptr, 0) > 0);
 
 	if(input == 'q'){
 		return false;
@@ -84,7 +87,9 @@ bool App::keepPlaying(Level& d){
 		d = Level::HARD;
 	}
 	else{
+		std::cout << input;
 		std::cout << "Invalid input, assuming NORMAL Level.\n";
+		std::this_thread::sleep_for(std::chrono::seconds(5));
 		d = Level::NORMAL;
 	}
 
